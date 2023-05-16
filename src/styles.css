@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(219, 204, 69);
+    font-family: 'Arial';
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Icons: */
+i {
+    color: grey;
+}
+
+#introducao {
+    border: 1px black solid;
+    padding: 10px;
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    margin-top: 40px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.login-form button {
+    padding: 10px 20px;
+    background-color: rgb(219, 204, 69);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: rgb(190, 175, 49);
+}
+
+.login-form input::placeholder {
+    color: gray;
+}
+
+.login-form i {
+    margin-right: 5px;
+}
