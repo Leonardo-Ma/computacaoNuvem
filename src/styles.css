@@ -7,7 +7,6 @@ h1 {
     text-align: center;
 }
 
-/* Icons: */
 i {
     color: grey;
 }
@@ -49,4 +48,8 @@ i {
 
 .login-form i {
     margin-right: 5px;
+}
+
+#linkRep {
+    text-align: end;
 }

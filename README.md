@@ -1,14 +1,11 @@
-## Introdução:
-
-Projeto requisitado pelo professor de Computação em Núvem como requisito para conclusão de disciplina.
-
-### Projeto escolhido: Website de página única 
-
-### Tecnologias utilizadas:
+# Introdução:
+Projeto requisitado pelo professor de Computação em Nuvem como requisito para conclusão de disciplina.
+# Tecnologias utilizadas:
 - VSCode;
+- Github;
+- Git;
 - HTML;
-- CSS;
+- CSS.
+# Objetivo:
 
-### Objetivo:
-
-- Implementação do Front End utilizando HTML e CSS para uma página que será hospedada utilizando AWS Amplify.
+ ### Implementação do Front-End utilizando HTML e CSS para uma página que será hospedada utilizando o AWS Amplify.
