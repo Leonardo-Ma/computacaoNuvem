@@ -7,36 +7,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <!-- Font Awesome CSS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>Trabalho Nuvem</title>
     </head>
 
     <body>
 
         <script>
-        function chamarAPI() {          
-            var formData = {
-                nome: document.getElementById("name").value,
-                avatar: null,
-                email: document.getElementById("email").value,
-                senha: document.getElementById("senha").value,
-                telefone: document.getElementById("telefone").value
-            };
-
-            $.ajax({
-                url: "http://bdfemasschat-env-2.eba-7p43uarw.sa-east-1.elasticbeanstalk.com/user/",
-                type: "POST",
-                data: JSON.stringify(formData),
-                contentType: "application/json",
-                success: function(response) {
-                    console.log(response);
-                },
-                error: function(xhr, status, error) {
-                    console.log(error);
+            function chamarAPI()
+            {
+                function limparFormulario()
+                {
+                    document.getElementById("formulario").reset();
                 }
-            });
-        }
-    </script>
+
+                var formData =
+                {
+                    nome: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    senha: document.getElementById("senha").value,
+                    telefone: document.getElementById("telefone").value
+                };
+
+                $.ajax({
+                    url: "http://bdfemasschat-env-2.eba-7p43uarw.sa-east-1.elasticbeanstalk.com/user/",
+                    type: "POST",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (response)
+                    {
+                        console.log(response);
+                        document.getElementById("mensagem").innerHTML = "Sucesso!";
+                        limparFormulario();
+                    },
+                    error: function (xhr, status, error)
+                    {
+                        console.log(error);
+                        document.getElementById("mensagem").innerHTML = "Falha!";
+                        limparFormulario();
+                    }
+                });
+            }
+        </script>
 
         <h1 class="introducao"> <i class="fas fa-cloud"></i> Trabalho de Nuvem <i class="fas fa-cloud"></i> </h1>
         <div id="introducao">
@@ -44,14 +56,17 @@
             <h4 class="introducao"> <i class="fa fa-user"></i> Docente: Martinelli de Oliveira Paula </h4>
             <h4 class="introducao"> <i class="fa fa-cloud"></i> Disciplina: Computação em Nuvem</h4>
 
-            <form class="login-form" onsubmit="event.preventDefault(); chamarAPI();" >
-                <input type="text" placeholder="Login" id="login" required>
+            <form class="login-form" id="formulario" onsubmit="event.preventDefault(); chamarAPI();">
+                <input type="text" placeholder="Nome" id="name" required>
                 <input type="email" placeholder="Email" id="email" required>
-                <input type="text", placeholder="Telefone" id="telefone" required>
+                <input type="text" , placeholder="Telefone" id="telefone" required>
                 <input type="password" placeholder="Senha" id="senha" required>
-                <button type="submit">Login</button>
+                <button type="submit" >Registrar Pessoa</button>
             </form>
+
+            <div id="mensagem" style="text-align: center;"></div>
         </div>
+
     </body>
 
 </html>
